@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# eComAI_Front
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é um projeto frontend desenvolvido em React e Tailwind CSS que permite o upload de imagens, faz o envio para uma API backend via Axios, e exibe uma pré-visualização da imagem carregada, além de mostrar os resultados processados pela API, como uma descrição otimizada, título e tags.
 
-## Available Scripts
+## Funcionalidades
 
-In the project directory, you can run:
+- Upload de imagens através de um formulário.
+- Pré-visualização da imagem carregada.
+- Envio da imagem para uma API para processamento.
+- Exibição de resultados recebidos da API, como título otimizado, descrição e tags geradas.
 
-### `npm start`
+## Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React**: Biblioteca JavaScript para criação de interfaces de usuário.
+- **Tailwind CSS**: Framework CSS utilitário para estilização rápida.
+- **Axios**: Cliente HTTP baseado em Promises para fazer requisições à API.
+- **JavaScript (ES6+)**: Linguagem principal usada no desenvolvimento.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Pré-requisitos
 
-### `npm test`
+Certifique-se de ter o seguinte instalado em seu ambiente de desenvolvimento:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Node.js](https://nodejs.org/) (versão 12.x ou superior)
+- [npm](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/) para gerenciar as dependências.
 
-### `npm run build`
+## Instalação
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone este repositório em sua máquina local:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   cd seu-repositorio
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Instale as dependências do projeto:
 
-### `npm run eject`
+   Com npm:
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   Ou com Yarn:
+   ```bash
+   yarn install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Inicie o servidor de desenvolvimento:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   Com npm:
+   ```bash
+   npm start
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   Ou com Yarn:
+   ```bash
+   yarn start
+   ```
 
-## Learn More
+   O aplicativo estará rodando em [http://localhost:3000](http://localhost:3000).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Estrutura do Projeto
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+├── public/            # Arquivos públicos (HTML, favicon, etc.)
+├── src/               # Código-fonte do projeto
+│   ├── components/    # Componentes React reutilizáveis
+│   ├── App.js         # Componente principal
+│   ├── index.js       # Ponto de entrada do React
+├── .gitignore         # Arquivos ignorados pelo Git
+├── package.json       # Dependências e scripts do projeto
+├── README.md          # Documentação do projeto
+└── tailwind.config.js # Configurações do Tailwind CSS
+```
 
-### Code Splitting
+### Componentes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **ImageUploadForm**: Formulário que permite ao usuário selecionar e enviar uma imagem.
+- **PreviewImage**: Exibe uma pré-visualização da imagem carregada.
+- **ResultDisplay**: Exibe os resultados retornados pela API (título otimizado, descrição e tags).
 
-### Analyzing the Bundle Size
+## Endpoints da API
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Este projeto faz uma requisição para o seguinte endpoint backend:
 
-### Making a Progressive Web App
+- `POST /process_image`: Envia a imagem para processamento e retorna um objeto com título otimizado, descrição aprimorada e tags.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Personalização
 
-### Advanced Configuration
+Este projeto usa **Tailwind CSS** para estilização. Você pode personalizar o tema ou adicionar novos estilos modificando o arquivo `tailwind.config.js`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contribuição
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Faça um fork deste repositório.
+2. Crie uma branch com a sua feature: `git checkout -b minha-feature`.
+3. Commit suas mudanças: `git commit -m 'feat: minha nova feature'`.
+4. Envie para a branch original: `git push origin minha-feature`.
+5. Abra um Pull Request.
