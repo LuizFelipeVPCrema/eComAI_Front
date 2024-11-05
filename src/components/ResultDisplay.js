@@ -5,6 +5,8 @@ const ResultDisplay = ({ optimizedTitle, enhancedDescription, tags }) => {
     const [buttonText, setButtonText] = useState('Copiar');
 
     const handleCopy = () => {
+
+        
         const textToCopy = `
         Título: ${optimizedTitle}
         Descrição: ${enhancedDescription}
@@ -21,6 +23,10 @@ const ResultDisplay = ({ optimizedTitle, enhancedDescription, tags }) => {
         });
     };
 
+    const processedTags = tags
+    .flatMap(tag => tag.split(','))
+    .map(tag => tag.trim())
+    .filter(tag => tag !== '');
     
     return (
         <div className="flex flex-col mt-6 bg-white border p-6 rounded-lg shadow-lg max-w-md w-full">
@@ -50,7 +56,7 @@ const ResultDisplay = ({ optimizedTitle, enhancedDescription, tags }) => {
 
         <p className="text-lg font-semibold">Tags:</p>
         <ul className="list-disc list-inside">
-            <TagComponent tags={tags} />
+            <TagComponent tags={processedTags} />
         </ul>
         </div>
   );
